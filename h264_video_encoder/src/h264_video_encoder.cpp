@@ -178,9 +178,7 @@ AwsError RunEncoderNode(int argc, char ** argv)
   //
   // run the node
   //
-  rclcpp::executors::SingleThreadedExecutor executor;
-  executor.add_node(node);
-  executor.spin();
+  rclcpp::spin(node);
   AWS_LOG_INFO(__func__, "Shutting down H264 Video Node...");
   Aws::Utils::Logging::ShutdownAWSLogging();
   return AWS_ERR_OK;

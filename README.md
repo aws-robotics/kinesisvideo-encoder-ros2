@@ -14,21 +14,20 @@ The source code is released under [LGPL 2.1]. However, this package uses `h264_e
 **Maintainer**: AWS RoboMaker, ros-contributions@amazon.com
 
 ### Supported ROS Distributions
-- Kinetic
-- Melodic
+- Dashing 
 
 ### Build status
 * Travis CI:
-    * "master" branch [![Build Status](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros1.svg?branch=master)](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros1/branches)
-    * "release-latest" branch [![Build Status](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros1.svg?branch=release-latest)](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros1/branches)
+    * "master" branch 
+    * "release-latest" branch 
 * ROS build farm:
-    * ROS Kinetic @ u16.04 Xenial [![Build Status](http://build.ros.org/job/Kbin_uX64__h264_video_encoder__ubuntu_xenial_amd64__binary/badge/icon)](http://build.ros.org/job/Kbin_uX64__h264_video_encoder__ubuntu_xenial_amd64__binary)
-    * ROS Melodic @ u18.04 Bionic [![Build Status](http://build.ros.org/job/Mbin_uB64__h264_video_encoder__ubuntu_bionic_amd64__binary/badge/icon)](http://build.ros.org/job/Mbin_uB64__h264_video_encoder__ubuntu_bionic_amd64__binary)
 
 
 ## Installation
 
 ### Binaries
+
+**Not available in apt yet**
 On Ubuntu you can install the latest version of this package using the following command
 
         sudo apt-get update
@@ -48,7 +47,7 @@ To build from source you'll need to create a new workspace, clone and checkout t
     _Note: Replace __`{MAJOR.VERSION}`__ below with the latest major version number to get the latest release branch._
 
         cd ~/ros-workspace/src
-        git clone https://github.com/aws-robotics/kinesisvideo-encoder-ros1.git -b release-v{MAJOR.VERSION}
+        git clone https://github.com/aws-robotics/kinesisvideo-encoder-ros2.git -b release-v{MAJOR.VERSION}
 
 - Install dependencies
 
@@ -69,8 +68,8 @@ _Note: If building the master branch instead of a release branch you may need to
 
 - Build and run the unit tests
 
-        colcon build --packages-select h264_video_encoder --cmake-target tests
-        colcon test --packages-select h264_video_encoder h264_encoder core && colcon test-results --all
+        colcon build 
+        colcon test && colcon test-results --all
 
 
 ### Building on Cloud9 - Cross Compilation
@@ -85,7 +84,7 @@ _Note: If building the master branch instead of a release branch you may need to
        mkdir -p ~/environment/robot_ws/src
        cd ~/environment/robot_ws/src
        git clone https://github.com/aws-robotics/kinesisvideo-encoder-common.git
-       git clone https://github.com/aws-robotics/kinesisvideo-encoder-ros1.git
+       git clone https://github.com/aws-robotics/kinesisvideo-encoder-ros2.git
 
        # run docker image
        cd ..
@@ -121,8 +120,9 @@ An example launch file called `sample_application.launch` is included in this pr
 
 ### Running the node
 To launch the H264 encoder node, you can run the following command:
+**TODO**
 
-    roslaunch h264_video_encoder sample_application.launch
+    ros2 launch h264_video_encoder sample_application.py
 
 
 ## Configuration File and Parameters

@@ -2,11 +2,11 @@
 
 # The name of the topic to which the H264 encoder node should subscribe to obtain the feed desired to be encoded
 # The topic must be a sensor_msgs/Image message
-subscription_topic: "/raspicam_node/image"
+subscription_topic: "/raspicam_node.image"
 
 # The name of the topic to which H264 encoder node should publish the encoded video stream
 # The topic will be a kinesis_video_msgs/KinesisVideoFrame message
-publication_topic: "/video/encoded"
+publication_topic: "/video.encoded"
 
 # The size of the subscribed and publishing message queues (default: 100)
 # queue_size: 100

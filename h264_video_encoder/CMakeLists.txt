@@ -11,7 +11,6 @@ find_package(aws_ros2_common REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(kinesis_video_msgs REQUIRED)
-find_package(ament_cmake_gmock REQUIRED)
 find_package(ament_cmake_gtest REQUIRED)
 find_package(ament_cmake REQUIRED)
 find_package(rmw_implementation REQUIRED)
@@ -76,7 +75,7 @@ install(DIRECTORY config/ DESTINATION share/${PROJECT_NAME})
 
 ## Add gtest based cpp test target and link libraries
 #ament_export_dependencies(GMock QUIET)
-#ament_add_gmock(test_h264_video_encoder
+#ament_add_gtest(test_h264_video_encoder
 #  test/h264_video_encoder_test.cpp
 #)
 #target_include_directories(test_h264_video_encoder
@@ -92,7 +91,6 @@ ament_export_dependencies(aws_ros2_common)
 ament_export_dependencies(image_transport)
 ament_export_dependencies(sensor_msgs)
 ament_export_dependencies(kinesis_video_msgs)
-ament_export_dependencies(ament_cmake_gmock)
 ament_export_dependencies(ament_cmake_gtest)
 ament_export_dependencies(ament_cmake)
 ament_export_dependencies(rmw_implementation)
