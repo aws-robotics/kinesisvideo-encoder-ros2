@@ -91,7 +91,6 @@ protected:
   {
     if (prev_frame.index > 0) {
       EXPECT_GT(frame->index, prev_frame.index);
-      printf("frame->index: %d prev_fram.dur: %lu, fram->dur: %lu\n", frame->index, prev_frame.duration, frame->duration);
       EXPECT_EQ(prev_frame.duration, frame->duration);
       EXPECT_EQ(0, (frame->decoding_ts - prev_frame.decoding_ts) % frame->duration);
       EXPECT_EQ(0, (frame->presentation_ts - prev_frame.presentation_ts) % frame->duration);
@@ -229,7 +228,6 @@ TEST_F(H264EncoderNodeSuite, EncoderCallback)
     //rclcpp::spin_some(sub_node);
 
     EXPECT_GE(frame_index, prev_frame_index);
-    printf("frame_index: %lu\n", frame_index);
     prev_frame_index = frame_index;
   }
 
@@ -245,7 +243,6 @@ TEST_F(H264EncoderNodeSuite, EncoderCallback)
 
 TEST_F(H264EncoderNodeSuite, InitializeCommunicaiton)
 {
-  printf("initialize_encoder\n");
   auto init_node = rclcpp::Node::make_shared("init_node");
   std::shared_ptr<rclcpp::Publisher<kinesis_video_msgs::msg::KinesisVideoFrame>> pub;
   image_transport::Subscriber image_sub;
