@@ -109,9 +109,9 @@ void ImageCallback(sensor_msgs::msg::Image::ConstSharedPtr msg, const H264Encode
 }
 
 void InitializeCommunication(rclcpp::Node::SharedPtr node,
-                             std::shared_ptr<rclcpp::Subscription<kinesis_video_msgs::msg::KinesisImageMetadata>> metadata_sub,
+                             std::shared_ptr<rclcpp::Subscription<kinesis_video_msgs::msg::KinesisImageMetadata>> & metadata_sub,
                              image_transport::Subscriber& image_sub,
-                             std::shared_ptr<rclcpp::Publisher<kinesis_video_msgs::msg::KinesisVideoFrame>> pub,
+                             std::shared_ptr<rclcpp::Publisher<kinesis_video_msgs::msg::KinesisVideoFrame>> & pub,
                              std::unique_ptr<H264Encoder>& encoder,
                              uint64_t & frame_num,
                              kinesis_video_msgs::msg::KinesisImageMetadata & metadata,

@@ -74,17 +74,16 @@ install(DIRECTORY config/ DESTINATION share/${PROJECT_NAME})
 #############
 
 ## Add gtest based cpp test target and link libraries
-#ament_export_dependencies(GMock QUIET)
-#ament_add_gtest(test_h264_video_encoder
-#  test/h264_video_encoder_test.cpp
-#)
-#target_include_directories(test_h264_video_encoder
-#PRIVATE include ${h264_video_encoder_INCS})
-#target_link_libraries(test_h264_video_encoder
-#  ${PROJECT_NAME}_lib
-#  ${h264_video_encoder_LIBS}
-#  ${GMOCK_BOTH_LIBRARIES}
-#)
+ament_add_gtest(test_h264_video_encoder
+  test/h264_video_encoder_test.cpp
+)
+target_include_directories(test_h264_video_encoder
+PRIVATE include ${h264_video_encoder_INCS})
+target_link_libraries(test_h264_video_encoder
+  ${PROJECT_NAME}_lib
+  ${h264_video_encoder_LIBS}
+  ${GMOCK_BOTH_LIBRARIES}
+)
 ament_export_dependencies(h264_encoder_core)
 ament_export_dependencies(aws_common)
 ament_export_dependencies(aws_ros2_common)
