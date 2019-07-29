@@ -111,18 +111,15 @@ A launch file called `h264_video_encoder.launch` is included in this package. Th
 | Arg Name | Description |
 | --------- | ------------ |
 | node_name | (optional) The name the H264 encoder node should be launched with. If not provided, the node name will default to `h264_video_encoder` |
-| config_file | (optional) A path to a rosparam config file. |
 
-An example launch file called `sample_application.launch` is included in this project that gives an example of how you can include this node in your project and provide it with arguments.
-
+An example params file is include in config/sample_configuration.yaml.
 
 ## Usage
 
 ### Running the node
 To launch the H264 encoder node, you can run the following command:
-**TODO**
 
-    ros2 launch h264_video_encoder sample_application.py
+    ros2 launch h264_video_encoder h264_video_encoder_launch.py __params:=`ros2 pkg prefix h264_video_encoder`/share/h264_video_encoder/config/sample_configuration.yaml
 
 
 ## Configuration File and Parameters
