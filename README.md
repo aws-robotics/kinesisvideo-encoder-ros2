@@ -1,6 +1,6 @@
 # h264_video_encoder
 
-
+**NOTE: This package is still under development and has not been released yet**
 ## Overview
 This package provides a ROS Node that will encode a stream of images into an H264 video stream.
 
@@ -18,9 +18,8 @@ The source code is released under [LGPL 2.1]. However, this package uses `h264_e
 
 ### Build status
 * Travis CI:
-    * "master" branch 
-    * "release-latest" branch 
-* ROS build farm:
+    * "master" branch [![Build Status](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros2.svg?branch=master)](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros2/branches) 
+* ROS build farm: **NOT YET RELEASED**
 
 
 ## Installation
@@ -141,12 +140,12 @@ When the parameters are absent in the ROS parameter server, default values are u
 #### Published Topics
 | Topic Name | Message Type | Description |
 | ---------- | ------------ | ----------- |
-| *Configurable* (default="video/encoded") | kinesis_video_msgs/KinesisVideoFrame | The node will publish to a topic of a given name. Each message being published contains a chunk of the video stream, usually per video frame. |
+| *Configurable* (default="video/encoded") | kinesis_video_msgs/msg/KinesisVideoFrame | The node will publish to a topic of a given name. Each message being published contains a chunk of the video stream, usually per video frame. |
 
 #### Subscribed Topics
 | Topic Name | Message Type | Description |
 | ---------- | ------------ | ----------- |
-| *Configurable* (default="/raspicam_node/image") | sensor_msgs/Image | The node will subscribe to a topic of a given name. The data is expected to be a stream of images from a source (such as a Raspberry Pi camera). |
+| *Configurable* (default="/raspicam_node/image") | sensor_msgs/msg/Image | The node will subscribe to a topic of a given name. The data is expected to be a stream of images from a source (such as a Raspberry Pi camera). |
 
 
 ## Bugs & Feature Requests
