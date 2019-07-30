@@ -158,12 +158,12 @@ void InitializeCommunication(rclcpp::Node::SharedPtr node,
 AwsError RunEncoderNode(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
-  auto node = rclcpp::Node::make_shared("h264_video_encoder");
-  node->declare_parameter("subscription_topic");
-  node->declare_parameter("metadata_topic");
-  node->declare_parameter("publication_topic");
-  node->declare_parameter("queue_size");
-  
+  rclcpp::NodeOptions node_options;
+  node_options.allow_undeclared_parameters(true);
+  node_options.automatically_declare_parameters_from_overrides(true);
+  auto node = rclcpp::Node::make_shared("h264_video_encoder", node_options);
+
+ 
   Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::AWSROSLogger>(
     "h264_video_encoder", Aws::Utils::Logging::LogLevel::Trace, node));
   AWS_LOG_INFO(__func__, "Starting H264 Video Node...");
