@@ -159,6 +159,10 @@ AwsError RunEncoderNode(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
   auto node = rclcpp::Node::make_shared("h264_video_encoder");
+  node->declare_parameter("subscription_topic");
+  node->declare_parameter("metadata_topic");
+  node->declare_parameter("publication_topic");
+  node->declare_parameter("queue_size");
   
   Aws::Utils::Logging::InitializeAWSLogging(Aws::MakeShared<Aws::Utils::Logging::AWSROSLogger>(
     "h264_video_encoder", Aws::Utils::Logging::LogLevel::Trace, node));

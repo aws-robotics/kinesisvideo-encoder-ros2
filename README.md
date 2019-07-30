@@ -106,24 +106,21 @@ _Note: If building the master branch instead of a release branch you may need to
        aws s3 cp armhf_bundle/output.tar.gz s3://<bucket_name_in_your_robomaker_account>/h264_video_encoder.armhf.tar
 
 ## Launch Files
-A launch file called `h264_video_encoder.launch` is included in this package. The launch file uses the following arguments:
+A launch file called `h264_video_encoder_launch.py` is included in this package. The launch file uses the following arguments:
 
 | Arg Name | Description |
 | --------- | ------------ |
 | node_name | (optional) The name the H264 encoder node should be launched with. If not provided, the node name will default to `h264_video_encoder` |
-| config_file | (optional) A path to a rosparam config file. |
+| config    | (optional) A path to a ros2 parameters yaml file. |
 
-An example launch file called `sample_application.launch` is included in this project that gives an example of how you can include this node in your project and provide it with arguments.
-
+An example params file is include in config/sample_configuration.yaml.
 
 ## Usage
 
 ### Running the node
 To launch the H264 encoder node, you can run the following command:
-**TODO**
 
-    ros2 launch h264_video_encoder sample_application.py
-
+    ros2 launch h264_video_encoder h264_video_encoder_launch.py 
 
 ## Configuration File and Parameters
 An example configuration file called `sample_configuration.yaml` is provided for running the H264 encoder node on a Raspberry Pi based system.
