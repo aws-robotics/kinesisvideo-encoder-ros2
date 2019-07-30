@@ -145,7 +145,7 @@ When the parameters are absent in the ROS parameter server, default values are u
 #### Subscribed Topics
 | Topic Name | Message Type | Description |
 | ---------- | ------------ | ----------- |
-| *Configurable* (default="/raspicam_node/image") | sensor_msgs/msg/Image | The node will subscribe to a topic of a given name. The data is expected to be a stream of images from a source (such as a Raspberry Pi camera). |
+| *Configurable* (default="/raspicam_node/image") | sensor_msgs/Image | The node will subscribe to a topic of a given name. The data is expected to be a stream of images from a source (such as a Raspberry Pi camera). |
 
 
 ## Bugs & Feature Requests
