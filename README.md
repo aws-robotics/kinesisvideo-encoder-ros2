@@ -1,5 +1,6 @@
 # h264_video_encoder
 
+**Note: this repository is under active development. The package provided here is a release candidate; the API may change without notice and no support is provided for it at the moment.**
 
 ## Overview
 This package provides a ROS Node that will encode a stream of images into an H264 video stream.
