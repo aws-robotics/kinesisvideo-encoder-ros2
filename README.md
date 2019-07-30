@@ -140,7 +140,7 @@ When the parameters are absent in the ROS parameter server, default values are u
 #### Published Topics
 | Topic Name | Message Type | Description |
 | ---------- | ------------ | ----------- |
-| *Configurable* (default="video/encoded") | kinesis_video_msgs/msg/KinesisVideoFrame | The node will publish to a topic of a given name. Each message being published contains a chunk of the video stream, usually per video frame. |
+| *Configurable* (default="video/encoded") | kinesis_video_msgs/KinesisVideoFrame | The node will publish to a topic of a given name. Each message being published contains a chunk of the video stream, usually per video frame. |
 
 #### Subscribed Topics
 | Topic Name | Message Type | Description |
