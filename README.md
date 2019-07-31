@@ -5,7 +5,7 @@
 ## Overview
 This package provides a ROS Node that will encode a stream of images into an H264 video stream.
 
-**Keywords**: ROS, AWS, Kinesis
+**Keywords**: ROS, ROS2, AWS, Kinesis
 
 ### License
 The source code is released under [LGPL 2.1]. However, this package uses `h264_encoder_core` which incorporates several different encoding components which may further restrict the license. By default, x264 is used for software encoding, thereby applying GPL to all of h264_video_encoder.
@@ -42,20 +42,21 @@ To build from source you'll need to create a new workspace, clone and checkout t
 
         mkdir -p ~/ros-workspace/src
 
-- Clone the package into the source directory . 
-
-    _Note: Replace __`{MAJOR.VERSION}`__ below with the latest major version number to get the latest release branch._
+- Clone the package into the source directory
 
         cd ~/ros-workspace/src
-        git clone https://github.com/aws-robotics/kinesisvideo-encoder-ros2.git -b release-v{MAJOR.VERSION}
+        git clone https://github.com/aws-robotics/kinesisvideo-encoder-ros2.git
+
+- Fetch unreleased dependencies from github
+
+        cd ~/ros-workspace 
+        cp src/kinesisvideo-encoder-ros2/.rosinstall.master .rosinstall
+        rosws update
 
 - Install dependencies
 
-        cd ~/ros-workspace 
-        sudo apt-get update && rosdep update
+        cd ~/ros-workspace && sudo apt-get update && rosdep update
         rosdep install --from-paths src --ignore-src -r -y
-        
-_Note: If building the master branch instead of a release branch you may need to also checkout and build the master branches of the packages this package depends on._
 
 - Build the packages
 
@@ -111,9 +112,7 @@ A launch file called `h264_video_encoder_launch.py` is included in this package.
 | Arg Name | Description |
 | --------- | ------------ |
 | node_name | (optional) The name the H264 encoder node should be launched with. If not provided, the node name will default to `h264_video_encoder` |
-| config    | (optional) A path to a ros2 parameters yaml file. |
-
-An example params file is include in config/sample_configuration.yaml.
+| config    | (optional) A path to a ros2 parameters yaml file. By default uses config/sample_configuration.yaml |
 
 ## Usage
 
@@ -124,7 +123,7 @@ To launch the H264 encoder node, you can run the following command:
 
 ## Configuration File and Parameters
 An example configuration file called `sample_configuration.yaml` is provided for running the H264 encoder node on a Raspberry Pi based system.
-When the parameters are absent in the ROS parameter server, default values are used, thus all parameters are optional. See table below for details.
+When the parameters are absent, default values are used, thus all parameters are optional. See table below for details.
 
 | Parameter Name | Description | Type |
 | ------------- | -----------------------------------------------------------| ------------- |
