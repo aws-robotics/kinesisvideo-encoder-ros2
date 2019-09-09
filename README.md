@@ -20,7 +20,8 @@ The source code is released under [LGPL 2.1]. However, this package uses `h264_e
 ### Build status
 * Travis CI:
     * "master" branch [![Build Status](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros2.svg?branch=master)](https://travis-ci.org/aws-robotics/kinesisvideo-encoder-ros2/branches) 
-* ROS build farm: **NOT YET RELEASED**
+* ROS build farm:
+    * ROS2 Dashing @ u18.04 Bionic [![Build Status](http://build.ros2.org/job/Dbin_uB64__h264_video_encoder__ubuntu_bionic_amd64__binary/badge/icon)](http://build.ros2.org/job/Dbin_uB64__h264_video_encoder__ubuntu_bionic_amd64__binary)
 
 
 ## Installation
